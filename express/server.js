@@ -20,7 +20,8 @@ const io = new Server(server, {
 });
 
 const port = 3000;
-const imagesDir = "/var/www/html/jspl-defect-detection/images/input";
+const imagesDir = "E:/smartVIEW/output_of_model";
+// const imagesDir = "/var/www/html/jspl-defect-detection/images/input";
 const uploadsDir = path.join(__dirname, '../../qc_images');
 const distDir = path.join(__dirname, '../vue', 'dist');
 const calWidthDir = "C:/Users/Admin/Desktop/AKXA_width_calculate.bat.lnk";
