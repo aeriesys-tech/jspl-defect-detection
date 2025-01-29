@@ -40,10 +40,10 @@ io.on('connection', (socket) => {
 	});
 });
 
-// const serialPort = new SerialPort({
-// 	path: 'COM1',
-// 	baudRate: 9600
-// })
+const serialPort = new SerialPort({
+	path: 'COM4',
+	baudRate: 9600
+})
 
 // Watch for new files in the folder
 fs.watch(imagesDir, (eventType, filename) => {
@@ -54,13 +54,13 @@ fs.watch(imagesDir, (eventType, filename) => {
 			if (!err && filename.toLowerCase().includes('defect')) {
 				console.log(`✅ New defect image detected: ${filename}`);
 
-				// if(serialPort) {
-				//   serialPort.write(1,(err) = {
-				//     if(err) {
-				//       console.log(err)
-				//     }
-				//   })
-				// }
+				if (serialPort) {
+					serialPort.write(1, (err) = {
+						if(err) {
+							console.log(err)
+						}
+					})
+				}
 			}
 		});
 	}
